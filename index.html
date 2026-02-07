@@ -142,12 +142,19 @@ I want you — today, tomorrow, and always.
     function yesClicked() {
       document.querySelector(".buttons").style.display = "none";
       document.getElementById("finalMessage").style.display = "block";
-      const subject = encodeURIComponent("She said YES ❤️");
-  const body = encodeURIComponent(
-    "She clicked YES.\n\nFrom today, it's us."
-  );
+     const message = encodeURIComponent(
+      "YES ❤️\nI choose you.\nFrom today, it's us."
+    );
 
-  window.location.href = `mailto:vadluriajay18@gmail.com?subject=${subject}&body=${body}`;
+    // Replace 91XXXXXXXXXX with YOUR phone number (with country code)
+    const phoneNumber = "918919734124";
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
+
+    document.querySelector(".buttons").style.display = "none";
+    document.getElementById("finalMessage").style.display = "block";
     }
   </script>
 
