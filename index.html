@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Only You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: fadeIn 1.5s ease;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: beat 1.2s infinite;
+      margin: 15px 0;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      transition: transform 0.3s ease, left 0.3s ease, top 0.3s ease;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #noBtn {
+      background: #ccc;
+      color: #333;
+      left: 10%;
+    }
+
+    #finalMessage {
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ff4d6d;
+      display: none;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey You ❤️</h1>
+    <div class="heart">💖</div>
+
+    <p>
+        From the day I saw you, you became my world.
+I don’t know when it happened — I just know it did.
+
+I can’t explain why I love you, because every single thing about you makes my heart skip.
+Your presence feels like home, your smile feels like peace.
+
+I don’t want reasons.
+I don’t want moments.
+I want you — today, tomorrow, and always.
+     <br>
+      I still want to ask YOU?💕
+    </p>
+
+    <p>Will you be my forever?</p>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="yesClicked()">YES 💍</button>
+      <button id="noBtn" onmouseover="runAway()">NO 🙈</button>
+    </div>
+
+    <div id="finalMessage">
+      You said YES 💖<br>
+      I promise to choose you every single day.
+    </div>
+  </div>
+
+  <script>
+    function runAway() {
+      const noBtn = document.getElementById("noBtn");
+      const container = document.querySelector(".buttons");
+
+      const maxX = container.clientWidth - noBtn.offsetWidth;
+      const maxY = container.clientHeight - noBtn.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    }
+
+    function yesClicked() {
+      document.querySelector(".buttons").style.display = "none";
+      document.getElementById("finalMessage").style.display = "block";
+      const subject = encodeURIComponent("She said YES ❤️");
+  const body = encodeURIComponent(
+    "She clicked YES.\n\nFrom today, it's us."
+  );
+
+  window.location.href = `mailto:vadluriajay18@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+
+</body>
+</html>
